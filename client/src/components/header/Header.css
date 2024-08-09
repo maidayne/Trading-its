@@ -1,0 +1,132 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 124px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 40px;
+}
+
+.logo-icon {
+    color: black;
+}
+
+/* Header.css */
+.logout-button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #5783e2;
+}
+
+.user-icon {
+    font-size: 24px;
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 8px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* To ensure rounded corners */
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    min-width: 200px;
+    /* Set a minimum width for the dropdown */
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition */
+}
+
+.dropdown-menu a:hover {
+    background-color: #5783e2;
+    /* Background color on hover */
+    color: white;
+    /* Text color on hover */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .logo {
+        font-size: 28px;
+    }
+
+    .user-icon {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .user-icon {
+        font-size: 18px;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav a {
+        margin: 5px 0;
+    }
+
+    .dropdown-menu {
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .user-icon {
+        font-size: 16px;
+    }
+}

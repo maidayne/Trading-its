@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main {
+  flex: 1;
+  /* Chiếm toàn bộ không gian còn lại của wrapper */
+}
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px 75px;
+  border-top: 1px solid #e1e1e1;
+  text-align: center;
+}
