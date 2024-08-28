@@ -1,85 +1,84 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .chart-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.chart-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.chart-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.chart-controls select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  flex: 1;
+  max-width: 150px;
+}
+
+.chart-controls input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  flex: 2;
+  max-width: 250px;
+}
+
+.chart-controls button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  flex: 1;
+  max-width: 100px;
+}
+
+.chart-controls button:hover {
+  background-color: #0056b3;
+}
+
+.chart-controls input::placeholder {
+  color: #888;
+}
+
+.chart-controls select:focus,
+.chart-controls input:focus,
+.chart-controls button:focus {
+  outline: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
   .chart-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  .chart-controls select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    flex: 1;
-    max-width: 150px;
-  }
-  
-  .chart-controls input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    flex: 2;
-    max-width: 250px;
-  }
-  
+
+  .chart-controls select,
+  .chart-controls input,
   .chart-controls button {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    flex: 1;
-    max-width: 100px;
+    max-width: 100%;
   }
-  
-  .chart-controls button:hover {
-    background-color: #0056b3;
-  }
-  
-  .chart-controls input::placeholder {
-    color: #888;
-  }
-  
-  .chart-controls select:focus,
-  .chart-controls input:focus,
-  .chart-controls button:focus {
-    outline: none;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  }
-  
-  @media (max-width: 768px) {
-    .chart-controls {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .chart-controls select,
-    .chart-controls input,
-    .chart-controls button {
-      max-width: 100%;
-    }
-  }
-  
-  .no-data {
-    text-align: center;
-    font-size: 1.2em;
-    color: #666;
-  }
-  
+}
+
+.no-data {
+  text-align: center;
+  font-size: 1.2em;
+  color: #666;
+}
