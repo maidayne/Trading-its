@@ -7,7 +7,8 @@ const CandlestickChart = () => {
   const chartContainerRef = useRef(null);
   const [data, setData] = useState([]);
   const [symbol, setSymbol] = useState('IBM');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [timeRange, setTimeRange] = useState('1day'); // Default time range
+  const [symbols] = useState(['IBM', 'AAPL', 'MSFT', 'GOOGL', 'AMZN']); // List of symbols
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +17,7 @@ const CandlestickChart = () => {
           params: {
             function: 'TIME_SERIES_DAILY',
             symbol: symbol,
-            outputsize: 'compact',
+            outputsize: timeRange === '1day' ? 'compact' : 'full', 
             apikey: '7KMSHHSH04FYUP9P',
           },
         });
@@ -43,7 +44,7 @@ const CandlestickChart = () => {
     };
 
     fetchData();
-  }, [symbol]);
+  }, [symbol, timeRange]); // Fetch data when symbol or timeRange changes
 
   useEffect(() => {
     if (data.length === 0) return;
@@ -75,30 +76,24 @@ const CandlestickChart = () => {
     setSymbol(event.target.value);
   };
 
-  const handleSearch = () => {
-    if (searchTerm) {
-      setSymbol(searchTerm.toUpperCase());
-    }
+  const handleTimeRangeChange = (event) => {
+    setTimeRange(event.target.value);
   };
 
   return (
     <div>
       <div className="chart-controls">
         <select value={symbol} onChange={handleSymbolChange}>
-          <option value="IBM">IBM</option>
-          <option value="AAPL">AAPL</option>
-          <option value="MSFT">MSFT</option>
-          <option value="GOOGL">GOOGL</option>
-          <option value="AMZN">AMZN</option>
+          {symbols.map(sym => (
+            <option key={sym} value={sym}>{sym}</option>
+          ))}
         </select>
 
-        <input
-          type="text"
-          placeholder="Search symbol..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button onClick={handleSearch}>Search</button>
+        <select value={timeRange} onChange={handleTimeRangeChange}>
+          <option value="1day">1 Day</option>
+          <option value="1week">1 Week</option>
+          <option value="1month">1 Month</option>
+        </select>
       </div>
 
       {data.length === 0 ? (
