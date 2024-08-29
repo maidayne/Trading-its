@@ -1,84 +1,90 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.chart-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 .chart-controls {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
   margin-bottom: 20px;
+  gap: 10px;
+}
+
+.chart-controls select,
+.chart-controls input,
+.chart-controls button {
+  margin: 0;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
 }
 
 .chart-controls select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  flex: 1;
-  max-width: 150px;
+  width: 120px;
+  max-width: 100%;
+  background-color: #f0f0f0; 
+  border: 1px solid #ccc; 
+  color: #333; 
+  cursor: pointer;
+}
+
+.chart-controls select option {
+  background-color: white; 
+  color: #333; 
 }
 
 .chart-controls input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  flex: 2;
-  max-width: 250px;
+  width: 150px;
+  max-width: 100%;
 }
 
 .chart-controls button {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
   background-color: #007bff;
   color: white;
-  font-size: 16px;
+  border: none;
   cursor: pointer;
-  flex: 1;
-  max-width: 100px;
+  transition: background-color 0.3s ease;
 }
 
 .chart-controls button:hover {
   background-color: #0056b3;
 }
 
-.chart-controls input::placeholder {
-  color: #888;
-}
-
-.chart-controls select:focus,
-.chart-controls input:focus,
-.chart-controls button:focus {
-  outline: none;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
-
 @media (max-width: 768px) {
   .chart-controls {
-    flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
   }
 
   .chart-controls select,
   .chart-controls input,
   .chart-controls button {
-    max-width: 100%;
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .chart-controls select {
+    width: 100px;
+  }
+
+  .chart-controls input {
+    width: 120px;
+  }
+
+  .chart-controls button {
+    padding: 4px 8px;
   }
 }
 
-.no-data {
-  text-align: center;
-  font-size: 1.2em;
-  color: #666;
+@media (max-width: 480px) {
+  .chart-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .chart-controls select,
+  .chart-controls input,
+  .chart-controls button {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
 }
